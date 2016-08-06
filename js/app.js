@@ -301,12 +301,21 @@
         tracksHTML += "</table>";
 
         $(".track-info").html(tracksHTML);
+        
+        var mq = window.matchMedia("(min-width: 980px)");
 
-        //Change CSS to match alnum from spotify
-        $(".track-info").css("display", "block");
-        $(".track-info").css("flex", "1 50%");
-        $(".album-info").css("text-align", "left");
-        $(".details-image").css("max-width", "90%");
+        if (mq.matches) {
+        
+          //Change CSS to match alnum from spotify
+          $(".track-info").css("display", "block");
+          $(".track-info").css("flex", "1 50%");
+          $(".album-info").css("text-align", "left");
+          $(".details-image").css("max-width", "90%");
+          } else{
+          $(".track-info").css("display", "none");
+          $(".album-info").css("text-align", "center");
+          $(".details-image").css("max-width", "100%");
+        }
       }
 
       if (APItoSearch=="flickr"){
